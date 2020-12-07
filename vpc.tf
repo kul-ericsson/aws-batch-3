@@ -36,14 +36,14 @@ resource "aws_subnet" "private_sn_2" {
 }
 
 resource "aws_internet_gateway" "gw" {
-	vpc_id = aws_vpc.terraform-vpc.id
+	vpc_id = aws_vpc.kul_vpc.id
 	tags = {
 		Name = "${var.tagname}_internet_gateway"
 	}
 }
 
 resource "aws_route_table" "rt1" {
-	vpc_id = aws_vpc.terraform-vpc.id
+	vpc_id = aws_vpc.kul_vpc.id
 	tags = {
 		Name = "${var.tagname}_Public_RT"
 	}
@@ -53,7 +53,7 @@ resource "aws_route_table" "rt1" {
 	}
 }
 
-resource "aws_route_table_association" "association-subnet" {
+resource "aws_route_table_association" "association_public_subnet" {
 	subnet_id = aws_subnet.public_sn.id
 	route_table_id = aws_route_table.rt1.id
 }

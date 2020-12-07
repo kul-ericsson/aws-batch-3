@@ -38,6 +38,13 @@ resource "aws_subnet" "private_sn_2" {
 resource "aws_internet_gateway" "gw" {
 	vpc_id = aws_vpc.terraform-vpc.id
 	tags = {
-		Name = "internet-gateway"
+		Name = "${var.tagname}_internet_gateway"
+	}
+}
+
+resource "aws_route_table" "rt1" {
+	vpc_id = aws_vpc.terraform-vpc.id
+	tags = {
+		Name = "${var.tagname}_Public_RT"
 	}
 }

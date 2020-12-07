@@ -34,3 +34,10 @@ resource "aws_subnet" "private_sn_2" {
     "Name" = "${var.tagname}_private_sn_2"
   }
 }
+
+resource "aws_internet_gateway" "gw" {
+	vpc_id = aws_vpc.terraform-vpc.id
+	tags = {
+		Name = "internet-gateway"
+	}
+}

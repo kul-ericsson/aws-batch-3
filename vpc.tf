@@ -57,3 +57,26 @@ resource "aws_route_table_association" "association_public_subnet" {
 	subnet_id = aws_subnet.public_sn.id
 	route_table_id = aws_route_table.rt1.id
 }
+
+resource "aws_security_group" "kul_sg" {
+    name = "${var.tagname}_Security_Group"
+    description = "Managed by Terraform Project by Kul"
+    vpc_id = aws_vpc.kul_vpc.id
+    ingress = [ {
+      cidr_blocks = [ "0.0.0.0/0" ]
+      description = "SSH"
+      from_port = 22
+      to_port = 22
+      protocol = "TCP"
+    } ]
+    egress = [ {
+      cidr_blocks = [ "0.0.0.0/0" ]
+      description = "All Open"
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+    } ]
+    tags = {
+      "Name" = "${var.tagname}_Security_Group"
+    }
+}

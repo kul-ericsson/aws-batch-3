@@ -25,6 +25,7 @@ resource "aws_subnet" "private_sn_1" {
   tags = {
     "Name" = "${var.tagname}_private_sn_1"
   }
+  availability_zone = var.availability_zone_private
 }
 
 resource "aws_subnet" "private_sn_2" {

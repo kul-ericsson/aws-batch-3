@@ -7,3 +7,5 @@
 - `terraform apply -auto-approve` # provide approval for resource creation as default
 - `terraform destory -auto-approve` # Delete all the resource procured using `terraform apply` command
 - `terraform output` # to print outputs exposed in the Terraform Project"
+
+** Added Version.tf with the respective provider detail for provider, Hashicorp made some changes in 0.14 related to 0.13upgrade command **

@@ -7,4 +7,5 @@ resource "aws_instance" "kul_server" {
   }
   subnet_id = aws_subnet.public_sn.id
   vpc_security_group_ids = [ aws_security_group.kul_sg.id ]
+  availability_zone = var.availability_zone
 }

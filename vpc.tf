@@ -47,4 +47,8 @@ resource "aws_route_table" "rt1" {
 	tags = {
 		Name = "${var.tagname}_Public_RT"
 	}
+    route {
+		cidr_block = "0.0.0.0/0"
+		gateway_id = aws_internet_gateway.gw.id
+	}
 }

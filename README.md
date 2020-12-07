@@ -3,4 +3,4 @@
 - terraform validate           # To Compile the Code
 - terraform plan               # to Dry Run
 - terraform apply              # to trigger the code in environment
-- terraform apply -var <varName>=<varValue> # to trigger the code with varibales on run time
+- terraform apply -var varName=varValue # to trigger the code with varibales on run time

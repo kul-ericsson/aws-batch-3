@@ -6,3 +6,4 @@
 - `terraform apply -var varName=varValue` # to trigger the code with varibales on run time
 - `terraform apply -auto-approve` # provide approval for resource creation as default
 - `terraform destory -auto-approve` # Delete all the resource procured using `terraform apply` command
+- `terraform output` # to print outputs exposed in the Terraform Project"

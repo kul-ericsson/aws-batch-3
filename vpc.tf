@@ -62,20 +62,20 @@ resource "aws_security_group" "kul_sg" {
     name = "${var.tagname}_Security_Group"
     description = "Managed by Terraform Project by Kul"
     vpc_id = aws_vpc.kul_vpc.id
-    ingress = [ {
+    ingress {
       cidr_blocks = [ "0.0.0.0/0" ]
       description = "SSH"
       from_port = 22
       to_port = 22
       protocol = "TCP"
-    } ]
-    egress = [ {
+    }
+    egress {
       cidr_blocks = [ "0.0.0.0/0" ]
       description = "All Open"
       from_port = 0
       to_port = 0
       protocol = "-1"
-    } ]
+    }
     tags = {
       "Name" = "${var.tagname}_Security_Group"
     }

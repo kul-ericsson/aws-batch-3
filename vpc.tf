@@ -4,6 +4,6 @@ resource "aws_vpc" "kul_vpc" {
  enable_dns_support = "true"
  enable_dns_hostnames = "true"
  tags = {
-     Name = "kul_vpc_aws"
+     Name = var.tagname
  }
 }

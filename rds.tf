@@ -16,8 +16,9 @@ resource "aws_db_instance" "kul_db" {
     username = "admin"
     password = "admin123"
     identifier = "kul-db"
-    availability_zone = var.availability_zone_private
+    availability_zone = var.availability_zone
     db_subnet_group_name = aws_db_subnet_group.kul_subnet_group.id
-    publicly_accessible = "false"
+    vpc_security_group_ids = [ aws_security_group.kul_sg.id ]
+    publicly_accessible = "true"
     skip_final_snapshot = "true"
 }

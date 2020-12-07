@@ -71,6 +71,13 @@ resource "aws_security_group" "kul_sg" {
       to_port = 22
       protocol = "TCP"
     }
+    ingress {
+      cidr_blocks = [ "0.0.0.0/0" ]
+      description = "MYSQL PORT"
+      from_port = 3306
+      to_port = 3306
+      protocol = "TCP"
+    }
     egress {
       cidr_blocks = [ "0.0.0.0/0" ]
       description = "All Open"
